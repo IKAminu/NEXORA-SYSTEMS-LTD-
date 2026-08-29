@@ -8,11 +8,11 @@ The website is designed and developed by Web4 Digital Solutions, led by IK Aminu
 
 This is a React + Vite + TypeScript website using Tailwind CSS v4.
 
-The project is deployed to GitHub Pages at:
+The website is currently deployed to GitHub Pages at:
 
-https://ikaminu.github.io/nexsys/
+https://ikaminu.github.io/NEXORA-SYSTEMS-LTD-/
 
-The production application is served from the `/nexsys/` path.
+The production application is served from the `/NEXORA-SYSTEMS-LTD-/` path.
 
 ## Project Structure
 
@@ -71,7 +71,7 @@ The application uses React Router.
 
 The production deployment lives under:
 
-`/nexsys/`
+`/NEXORA-SYSTEMS-LTD-/`
 
 The Vite `base` configuration and React Router `basename` must remain consistent with this deployment path.
 
@@ -194,6 +194,16 @@ The application is built using:
 `npm run build`
 
 The resulting `dist/` directory is deployed to GitHub Pages.
+
+The current GitHub Pages deployment is:
+
+https://ikaminu.github.io/NEXORA-SYSTEMS-LTD-/
+
+The Vite `base` configuration and React Router `basename` currently use:
+
+`/NEXORA-SYSTEMS-LTD-/`
+
+When the production custom domain is connected, update deployment-related configuration only where required. Do not remove the existing repository-path configuration unless the deployment architecture changes and all affected routes/assets are updated accordingly.
 
 Do not manually commit generated `dist/` files unless the deployment architecture explicitly requires it.
 
