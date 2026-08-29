@@ -153,7 +153,7 @@ export default function Terms() {
                   Your use of the Website may involve the collection and processing of
                   personal information. Such processing is governed by our{" "}
                   <a
-                    href="/nexsys/privacy"
+                    href="/NEXORA-SYSTEMS-LTD-/privacy"
                     className="text-white underline underline-offset-2"
                   >
                     Privacy Policy
