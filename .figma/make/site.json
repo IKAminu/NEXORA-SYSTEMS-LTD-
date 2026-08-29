@@ -1,7 +1,7 @@
 {
-  "description": "Streamlines project management by enabling teams to design, organize, and track tasks efficiently in a collaborative online workspace.",
+  "description": "Nexora Systems Limited is a technology and innovation group building practical solutions across business operations, commerce, logistics, and digital skills.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
