@@ -18,7 +18,7 @@ export default function Terms() {
                   className="text-[11px] font-mono tracking-widest uppercase mb-2"
                   style={{ color: "#1769FF" }}
                 >
-                  Effective Date: To be updated upon website launch
+                  Effective Date: 1st September 2026
                 </p>
                 <p
                   className="text-[11px] font-mono tracking-widest uppercase"
