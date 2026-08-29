@@ -23,5 +23,5 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: "/nexsys",
+  basename: "/NEXORA-SYSTEMS-LTD-",
 })
