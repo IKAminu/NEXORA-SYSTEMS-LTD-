@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   const emitSourcemaps = mode === 'development'
 
   return {
-    base: '/NEXORA-SYSTEMS-LTD-/',
+    base: '/',
     build: {
       sourcemap: emitSourcemaps ? 'inline' : false,
       minify: !emitSourcemaps,
@@ -37,6 +37,7 @@ export default defineConfig(({ mode }) => {
     preview: {
       host: '0.0.0.0',
       port: parseInt(process.env.PORT || '8443'),
+      strictPort: true,
     },
   }
 })
