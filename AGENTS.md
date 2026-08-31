@@ -2,6 +2,8 @@
 
 This repository contains the official website for Nexora Systems Limited.
 
+Repository: `IKAminu/NEXORA-SYSTEMS-LTD-`
+
 The website is designed and developed by Web4 Digital Solutions, led by IK Aminu.
 
 ## Development
@@ -12,13 +14,13 @@ The production website is available at:
 
 https://nexorasys.ng/
 
-The application is served from the domain root (`/`).
+The application is served from the domain root (`/`). The custom domain is the primary public-facing URL.
 
-The repository's GitHub Pages project URL is:
+The GitHub Pages project URL is:
 
 https://ikaminu.github.io/NEXORA-SYSTEMS-LTD-/
 
-The custom domain is the primary public-facing production URL.
+The GitHub Pages URL is the deployment origin/project URL. Do not use the repository path as the application's production base path.
 
 ## Project Structure
 
@@ -35,9 +37,9 @@ Start with the task-relevant files below. Follow imports and inspect additional 
 - `src/assets/` - Logos, illustrations, backgrounds, and other locally stored visual assets.
 - `index.html` - Vite HTML document shell.
 - `package.json` - Project metadata, dependencies, and development/build scripts.
-- `vite.config.ts` - Vite configuration, build settings, aliases, and deployment configuration.
+- `vite.config.ts` - Vite configuration, aliases, and deployment configuration.
 - `.mise.toml` - Development toolchain configuration.
-- `.github/workflows/` - GitHub Actions workflows responsible for production deployment.
+- `.github/workflows/deploy.yml` - GitHub Actions workflow responsible for production deployment.
 
 ## Technology
 
@@ -94,14 +96,7 @@ Visual assets should be stored in `src/assets/` when they are part of the applic
 
 Use the existing Nexora brand assets where appropriate.
 
-Current major brand assets include:
-
-- `nexora-logo.svg`
-- `nexora-systems-logo.svg`
-- `nexora-skillnet-logo.svg`
-- `nexora-marketplace-logo.svg`
-- `enyigo-logistics-logo.svg`
-- `world-background.svg`
+Current major brand assets include the Nexora logos, venture logos, world background, CEO image, and venture animation stored under `src/assets/`.
 
 Do not replace, rename, or remove brand assets without checking where they are referenced.
 
@@ -191,9 +186,11 @@ When making experimental visual changes, prefer changes that are easy to revert.
 
 Production deployment is handled through GitHub Actions and GitHub Pages.
 
-The workflow is located in:
+The workflow is located at:
 
 `.github/workflows/deploy.yml`
+
+The workflow runs on pushes to `main` and can also be started manually through GitHub Actions.
 
 The application is built using:
 
@@ -201,11 +198,11 @@ The application is built using:
 
 The resulting `dist/` directory is uploaded as a GitHub Pages artifact and deployed through the Pages deployment environment.
 
-The primary production website is:
+The production website is:
 
 https://nexorasys.ng/
 
-The repository's GitHub Pages project URL is:
+The GitHub Pages project URL is:
 
 https://ikaminu.github.io/NEXORA-SYSTEMS-LTD-/
 
@@ -221,7 +218,7 @@ The deployment workflow uses the repository secret:
 
 `VITE_WEB3FORMS_ACCESS_KEY`
 
-This value is provided to the Vite production build for the contact form integration. Do not commit the secret itself to the repository.
+This value is provided to the Vite production build for the Web3Forms contact form integration. Do not commit the secret itself to the repository.
 
 Do not manually commit generated `dist/` files unless the deployment architecture explicitly requires it.
 
