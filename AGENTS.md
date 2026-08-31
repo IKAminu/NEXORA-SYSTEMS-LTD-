@@ -8,11 +8,17 @@ The website is designed and developed by Web4 Digital Solutions, led by IK Aminu
 
 This is a React + Vite + TypeScript website using Tailwind CSS v4.
 
-The website is currently deployed to GitHub Pages at:
+The production website is available at:
+
+https://nexorasys.ng/
+
+The application is served from the domain root (`/`).
+
+The repository's GitHub Pages project URL is:
 
 https://ikaminu.github.io/NEXORA-SYSTEMS-LTD-/
 
-The production application is served from the `/NEXORA-SYSTEMS-LTD-/` path.
+The custom domain is the primary public-facing production URL.
 
 ## Project Structure
 
@@ -69,18 +75,18 @@ Keep CSS `@import` statements at the beginning of the stylesheet.
 
 The application uses React Router.
 
-The production deployment lives under:
+The production deployment is served from the domain root:
 
-`/NEXORA-SYSTEMS-LTD-/`
+`/`
 
-The Vite `base` configuration and React Router `basename` must remain consistent with this deployment path.
+The Vite `base` configuration and React Router route paths must remain consistent with the production deployment.
 
 When adding or changing routes, check both:
 
 - `src/routes.ts`
 - Any navigation components or links that reference the route
 
-Do not assume the application is served from the domain root.
+The application also includes a GitHub Pages SPA fallback so direct navigation or refreshes on application routes can be handled without falling through to the GitHub 404 page.
 
 ## Assets
 
@@ -183,7 +189,7 @@ When making experimental visual changes, prefer changes that are easy to revert.
 
 ## Deployment
 
-Production deployment is handled through GitHub Actions.
+Production deployment is handled through GitHub Actions and GitHub Pages.
 
 The workflow is located in:
 
@@ -193,17 +199,29 @@ The application is built using:
 
 `npm run build`
 
-The resulting `dist/` directory is deployed to GitHub Pages.
+The resulting `dist/` directory is uploaded as a GitHub Pages artifact and deployed through the Pages deployment environment.
 
-The current GitHub Pages deployment is:
+The primary production website is:
+
+https://nexorasys.ng/
+
+The repository's GitHub Pages project URL is:
 
 https://ikaminu.github.io/NEXORA-SYSTEMS-LTD-/
 
-The Vite `base` configuration and React Router `basename` currently use:
+The production Vite configuration uses:
 
-`/NEXORA-SYSTEMS-LTD-/`
+`base: '/'`
 
-When the production custom domain is connected, update deployment-related configuration only where required. Do not remove the existing repository-path configuration unless the deployment architecture changes and all affected routes/assets are updated accordingly.
+Routes are therefore defined relative to the domain root rather than the GitHub repository path.
+
+The build also creates the SPA fallback required for GitHub Pages route handling so that application routes can be opened directly without returning the GitHub 404 page.
+
+The deployment workflow uses the repository secret:
+
+`VITE_WEB3FORMS_ACCESS_KEY`
+
+This value is provided to the Vite production build for the contact form integration. Do not commit the secret itself to the repository.
 
 Do not manually commit generated `dist/` files unless the deployment architecture explicitly requires it.
 
